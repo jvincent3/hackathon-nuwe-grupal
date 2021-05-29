@@ -1,8 +1,9 @@
 import React from 'react'
-import {Box, FormControl, FormLabel, Input, Button, FormErrorMessage, useToast} from '@chakra-ui/react'
+import {Box, FormControl, FormLabel, Input, Button, FormErrorMessage, useToast, Alert} from '@chakra-ui/react'
 import {Formik, Field, Form} from 'formik'
 import {verifyLogin} from 'api/githubuser'
 import { useHistory } from 'react-router';
+import * as Yup from 'yup'
 
 function LoginForms() {
 
@@ -14,7 +15,12 @@ function LoginForms() {
         initialValues={{
              user: "",
              password: ""
-                         }}
+            }}
+        validationSchema={Yup.object({
+            user: Yup.string().required('Required'),
+            password: Yup.string().min(8, 'Must have minimum 8 characters').required('Required')
+        })}   
+
         onSubmit={(values, actions) => {
           setTimeout(() => {
             verifyLogin(values.user)
@@ -22,7 +28,6 @@ function LoginForms() {
                     history.push("/user/"+ values.user)
                 })
                 .catch(err => {
-                    console.log(err)
                     toast({
                       title: "User not found",
                       status: "error",
@@ -46,6 +51,11 @@ function LoginForms() {
                             </FormControl>
                         )}
                         </Field>
+                        { props.touched.user && props.errors.user ? (
+                            <Alert status="error">
+                                {props.errors.user}
+                            </Alert>
+                        ): null}
                 </Box>
                 <Box py="10px">
                     <Field name="password">
@@ -56,6 +66,11 @@ function LoginForms() {
                         </FormControl>
                     )}
                     </Field>
+                    { props.touched.password && props.errors.password ? (
+                            <Alert status="error">
+                                {props.errors.password}
+                            </Alert>
+                        ): null}
                 </Box>
                 <Button
                 mt={4}
