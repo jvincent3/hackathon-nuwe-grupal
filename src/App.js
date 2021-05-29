@@ -1,9 +1,9 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 import './App.css';
 //importing MOCK_DATA.json
-import MOCK_DATA from "./MOCK_DATA.json"
+//import MOCK_DATA from "./MOCK_DATA.json"
 import Home from "pages/home"
 import User from "pages/user"
 import Login from "pages/login"
@@ -15,7 +15,7 @@ import PageNotFound from 'components/Error/PageNotFound';
 function App() {
 
 
-    function countNuweAsLastName(data) {
+   /* function countNuweAsLastName(data) {
         //filters every array which contains Nuwe as last_name
         const contentFound = data.filter((value, index) => {
             return value.last_name.includes("Nuwe");
@@ -46,11 +46,11 @@ function App() {
         return removeAlphabetChars;
     }
     
-    useEffect(() => {
+    React.useEffect(() => {
         console.log(
             countNuweAsLastName(MOCK_DATA).length +"-"+ getFirstId(MOCK_DATA) +"-"+getAllObjectsWithoutPet(MOCK_DATA)
         )
-    },[])
+    },[])*/
 
   return (
     <Router>

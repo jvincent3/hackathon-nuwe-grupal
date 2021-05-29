@@ -1,5 +1,5 @@
 import React from 'react'
-import {Box, FormControl, FormLabel, Input, Button, FormErrorMessage, useToast, Alert} from '@chakra-ui/react'
+import {Box, FormControl, Input, Button, FormErrorMessage, useToast, Alert} from '@chakra-ui/react'
 import {Formik, Field, Form} from 'formik'
 import {verifyLogin} from 'api/githubuser'
 import { useHistory } from 'react-router';
@@ -51,11 +51,8 @@ function LoginForms() {
                             </FormControl>
                         )}
                         </Field>
-                        { props.touched.user && props.errors.user ? (
-                            <Alert status="error">
-                                {props.errors.user}
-                            </Alert>
-                        ): null}
+                        
+                        
                 </Box>
                 <Box py="10px">
                     <Field name="password">

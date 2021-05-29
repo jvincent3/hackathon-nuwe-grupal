@@ -6,7 +6,7 @@ import {HiOutlineStar} from 'react-icons/hi'
 
 function RepoList({userData}) {
 
-    const {isLoading, error, data, refetch} = useGetUserRepos({params: {username: userData.login, queryFn: userData}})
+    const {isLoading, error, data} = useGetUserRepos({params: {username: userData.login, queryFn: userData}})
 
     if ( isLoading ) return <Loading/>
 
