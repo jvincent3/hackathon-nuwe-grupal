@@ -18,7 +18,7 @@ In order for you to not reach the limit of API Github request. Make sure to chan
 
 
 ## Live Preview
-[Clich here to view the app live](https://github.com/jvincent3/hackathon-nuwe/blob/main/LICENSE)
+[Clich here to view the app live](https://hackathon-nuwe-1ojivgfce-jvincent3.vercel.app/user/jvincent3)
 
 # Toolkits used:
 
