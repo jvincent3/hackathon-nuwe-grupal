@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {ChakraProvider} from '@chakra-ui/react'
 import {QueryClient, QueryClientProvider} from 'react-query'
+import theme from "theme"
 
 const twentyFourHoursInMs = 1000 * 60 * 60* 24
 const queryClient = new QueryClient({
@@ -17,7 +18,7 @@ const queryClient = new QueryClient({
 
 ReactDOM.render(
   <React.StrictMode>
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
           <QueryClientProvider client={queryClient}>
             <App />
           </QueryClientProvider>
