@@ -14,7 +14,24 @@ import auth from 'githubAuth'
         return res.data
     })
     .catch(err => {
-        return err
+        throw err
+    })
+}
+
+export function verifyLogin(params) {
+    return axios({
+        method: "get",
+        url: `https://api.github.com/users/${params}`,
+        auth: auth,
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(res => {
+        return res.data
+    })
+    .catch(err => {
+        throw err
     })
 }
 
@@ -31,6 +48,6 @@ import auth from 'githubAuth'
         return res.data
     })
     .catch(err => {
-        return err
+        throw err
     })
 }
