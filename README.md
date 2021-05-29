@@ -2,7 +2,9 @@
 
 In this project we have created a mini app which finds the user data and shows all of the repository.
 
-## Run the application
+![](src/assets/images/app.png)
+
+# Run the application
 
 In the project directory, you can run:
 
@@ -11,9 +13,12 @@ In the project directory, you can run:
 Runs the app in the develoment mode.
 Open http://localhost:3000 to view it in the browser.
 
+## Github authentication
+In order for you to not reach the limit of API Github request. Make sure to change the value of the credentials here: [Authentication](https://github.com/jvincent3/hackathon-nuwe/blob/main/src/githubAuth.js)
+
 
 ## Live Preview
-[Clich here to view the app live](https://hackathon-nuwe-1ojivgfce-jvincent3.vercel.app/user/jvincent3)
+[Clich here to view the app live](https://github.com/jvincent3/hackathon-nuwe/blob/main/LICENSE)
 
 # Toolkits used:
 
