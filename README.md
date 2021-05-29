@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Hackathon Individual project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this project we have created a mini app which finds the user data and shows all of the repository.
 
-## Available Scripts
+## Run the application
 
 In the project directory, you can run:
 
-### `yarn start`
+### `npm run start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Runs the app in the develoment mode.
+Open http://localhost:3000 to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+## Live Preview
+[Clich here to view the app live](https://hackathon-nuwe-1ojivgfce-jvincent3.vercel.app/user/jvincent3)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Toolkits used:
 
-### `yarn build`
+## React
+Awesome JavaScript library for building user interfaces or UI components whic makes browsing through the web really fast and smooth.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Chakra UI 
+We are using Chakra UI because it's a really simple UI framework which is pretty, modular and really strong on its accessibility.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## React Query
+We are using React Query for its flexibility on handling asynchronous queries. And it already has all the functionalities thorougly prepared for the client side.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Axios
+Promised based HTTP client for the browser and node.js
 
-### `yarn eject`
+## Formik
+Formik is a really good tool for build forms in React and React native. It helps with the moost annoying parts like Getting values in an out of form state. Validation and erro messages
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Yup
+Hence we're using Formik, Yup is an awesome mix to validate all the forms we're using with Formik. Yup offers a lot of already made validation functions which saves you the trouble of havin to think for validation algorithms.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# License
+[MIT](https://github.com/jvincent3/hackathon-nuwe/blob/main/LICENSE)
