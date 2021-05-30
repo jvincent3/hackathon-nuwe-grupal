@@ -20,7 +20,7 @@ import axios from 'axios'
 export function register(params) {
     return axios({
         method: "post",
-        url: `/api/usere/signin`,
+        url: `/api/user/signin`,
         headers: {
             username: params.username,
             first_name: params.firstName,
