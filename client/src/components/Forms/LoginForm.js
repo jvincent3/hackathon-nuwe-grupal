@@ -69,15 +69,18 @@ function LoginForms() {
                             </Alert>
                         ): null}
                 </Box>
+                
                 <Button
-                mt={4}
-                width="100%"
-                colorScheme="teal"
-                isLoading={props.isSubmitting}
-                type="submit"
-                >
-                Login
+                  mt={4}
+                  width="100%"
+                  colorScheme="teal"
+                  isLoading={props.isSubmitting}
+                  type="submit"
+                  marginRight="1rem"
+                  >
+                  Login
                 </Button>
+  
               </Box>
           </Form>
         )}
