@@ -27,12 +27,12 @@ function RegisterForm() {
     return (
         <Formik
         initialValues={{
-             user: "",
+             username: "",
              email: "",
              password: ""
                          }}
         validationSchema={Yup.object({
-            user: Yup.string().required('Required'),
+            username: Yup.string().required('Required'),
             email: Yup.string().email('Invalid email adress').required('Required'),
             password: Yup.string().min(8, 'Must have minimum 8 characters').required('Required'),
             passwordConfirm: Yup.string().min(8, 'Must have minimum 8 characters').equalTo(Yup.ref('password'), 'Password must match').required('Required')
