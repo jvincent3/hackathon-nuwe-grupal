@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 const {
+    loginUser,
+    signinUser,
     createUser,
     getOneUser,
     getAllUsers,
@@ -11,6 +13,12 @@ const {
 
 const { encrypt } = require('../middleware/encryptPassword');
 const { authToken } = require('../middleware/verifyToken');
+
+// Ruta para login
+router.post('/login', encrypt, loginUser);
+
+// Ruta para sign in
+router.post('/signin', encrypt, signinUser);
 
 // Ruta para crear un usuario
 router.post('/', encrypt, createUser);
