@@ -11,11 +11,11 @@ function Navbar() {
             </Box>
             <Flex>
 
-                <Box px="10px" alignSelf="center">
-                    <Text fontWeight="semibold" fontSize="xl"><Link to="/home">Home</Link></Text>
+                <Box px="10px" alignSelf="center" marginRight="1rem">
+                    <Text fontWeight="semibold" fontSize="xl"><Link to="/landing">Home</Link></Text>
                 </Box>
 
-                <Box px="10px" alignSelf="center">
+                <Box px="10px" alignSelf="center" marginRight="1rem">
                     <Text fontWeight="semibold" fontSize="xl"><Link to="/login">About</Link></Text>
                 </Box>
 
