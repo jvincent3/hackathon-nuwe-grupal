@@ -19,7 +19,7 @@ function DesktopNavbar() {
                 </Box>
 
                 <Box px="10px" alignSelf="center" marginRight="1rem">
-                    <Text fontWeight="semibold" fontSize="xl"><Link to="/login">About</Link></Text>
+                    <Text fontWeight="semibold" fontSize="xl"><Link to="/about">About</Link></Text>
                 </Box>
 
                 <Box display="flex" px="10px" background="#491eff" borderRadius="3rem" padding="1.5rem" maxHeight="20px" alignItems="center">

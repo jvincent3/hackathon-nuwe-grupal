@@ -9,6 +9,7 @@ import Register from "pages/register"
 import Layout from 'layout'
 import PageNotFound from 'components/Error/PageNotFound';
 import Landing from 'pages/landing'
+import AboutPage from 'pages/about';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
                 <Route path="/login" component={Login}/>
                 <Route path="/Register" component={Register}/>
                 <Route path="/home" component={Home} />
+                <Route path="/about" component={AboutPage} />
                 <Route component={PageNotFound}/>
             </Switch>
         </Layout>
