@@ -11,7 +11,7 @@ const { connectDB } = require('./config/dbConnection');
 connectDB();
 
 // Establece el puerto de conexión
-app.set('port', process.env.PORT || 3000);
+app.set('port', 5000);
 
 // Configuración del servidor con express
 app.use(cookieParser());
