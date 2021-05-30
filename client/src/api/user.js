@@ -3,8 +3,7 @@ import axios from 'axios'
  export function login(params) {
     return axios({
         method: "post",
-        url: `https://api.github.com/users/${params.username}`,
-        auth: auth,
+        url: `/api/user/login`,
         headers: {
            username: params.username,
            password: params.password
@@ -21,8 +20,7 @@ import axios from 'axios'
 export function register(params) {
     return axios({
         method: "post",
-        url: `https://api.github.com/users/${params}`,
-        auth: auth,
+        url: `/api/usere/signin`,
         headers: {
             username: params.username,
             first_name: params.firstName,
