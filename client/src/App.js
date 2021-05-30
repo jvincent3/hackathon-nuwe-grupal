@@ -17,11 +17,11 @@ function App() {
     <Router>
         <Layout>
             <Switch>
-                <Route exact path="/" component={Home}/>
+                <Route exact path="/" component={Landing}/>
                 <Route path="/user/:username" component={User}/>
                 <Route path="/login" component={Login}/>
                 <Route path="/Register" component={Register}/>
-                <Route path="/landing" component={Landing} />
+                <Route path="/home" component={Home} />
                 <Route component={PageNotFound}/>
             </Switch>
         </Layout>

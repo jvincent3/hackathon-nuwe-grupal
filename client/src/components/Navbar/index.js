@@ -12,7 +12,7 @@ function Navbar() {
             <Flex>
 
                 <Box px="10px" alignSelf="center" marginRight="1rem">
-                    <Text fontWeight="semibold" fontSize="xl"><Link to="/landing">Home</Link></Text>
+                    <Text fontWeight="semibold" fontSize="xl"><Link to="/home">Home</Link></Text>
                 </Box>
 
                 <Box px="10px" alignSelf="center" marginRight="1rem">
