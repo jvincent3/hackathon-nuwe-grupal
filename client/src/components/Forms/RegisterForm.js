@@ -43,6 +43,12 @@ function RegisterForm() {
                 onSucces: (res) => {
                     console.log(res)
                     actions.setSubmitting(false)
+                    toast({
+                        title: "User created",
+                        status: "success",
+                        isClosable: true,
+                        duration: 5000,
+                      })
                 },
                 onError: (err) => {
                     console.log(err)
