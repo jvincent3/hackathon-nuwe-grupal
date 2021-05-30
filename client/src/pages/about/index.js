@@ -93,7 +93,7 @@ function AboutPage() {
                             </Text>
 
                             <Text>
-                                ront-end developer professional, 5 years of experience in development,<br></br>
+                                Front-end developer professional, 5 years of experience in development,<br></br>
                                 using the latest standards and tools, html5, css3, es6, react, react native<br></br>
                                 , redux, typescript, express, node, npm, php, mysql, bootstrap, SASS, github.<br></br> 
                                 Development of REST Api's using express js node and mongo.
