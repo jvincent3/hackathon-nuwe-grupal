@@ -40,7 +40,7 @@ function RegisterForm() {
         onSubmit={(values, actions) => {
           setTimeout(() => {
             registerFn.mutate(values, {
-                onSucces: (res) => {
+                onSuccess: (res) => {
                     console.log(res)
                     actions.setSubmitting(false)
                     toast({

@@ -25,7 +25,7 @@ function LoginForms() {
         onSubmit={(values, actions) => {
           setTimeout(() => {
             loginFn.mutate(values, {
-                onSucces: (res) => {
+                onSuccess: (res) => {
                     console.log(res)
                     actions.setSubmitting(false)
                 },
