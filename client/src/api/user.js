@@ -36,3 +36,16 @@ export function register(params) {
         throw err
     })
 }
+
+export function searchUsers(params) {
+    return axios({
+        method: "get",
+        url: `https://api.github.com/search/users?q=${params.username}&per_page=10`,
+    })
+    .then(res => {
+        return res.data
+    })
+    .catch(err => {
+        throw err
+    })
+}
