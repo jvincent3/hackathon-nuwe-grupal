@@ -36,7 +36,7 @@ function AboutPage() {
                         <Flex flexDirection="column" minWidth="600px">
 
                             <Text fontWeight="extrabold" fontSize="2xl">
-                                Lucía González Lara
+                                Jhon Vincent
                             </Text>
 
                             <Text fontWeight="semibold" fontSize="medium">
