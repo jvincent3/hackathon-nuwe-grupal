@@ -10,7 +10,8 @@ let connectionOptions = {
 
 // Stablish the connection with the database
 exports.connectDB = async () => {
-    await mongoose.connect(process.env.ATLAS_URI, connectionOptions, (err, connection) => {
+    const url = `mongodb://${process.env.HOST}:${process.env.PORT}/${process.env.DB}`;
+    await mongoose.connect(url, connectionOptions, (err, connection) => {
         if (err) throw err;
         console.log('Conectado correctamente a la Base de datos');
     })
