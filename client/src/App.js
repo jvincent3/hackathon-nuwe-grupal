@@ -10,6 +10,7 @@ import Layout from 'layout'
 import PageNotFound from 'components/Error/PageNotFound';
 import Landing from 'pages/landing'
 import AboutPage from 'pages/about';
+import Team from 'pages/team';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
                 <Route path="/Register" component={Register}/>
                 <Route path="/home" component={Home} />
                 <Route path="/about" component={AboutPage} />
+                <Route path="/team" component={Team} />
                 <Route component={PageNotFound}/>
             </Switch>
         </Layout>
