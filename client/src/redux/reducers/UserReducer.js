@@ -4,7 +4,7 @@ const initialState = {
   name: 'Edrop'
 }
 
-export default (user = initialState, action) => {
+export const UserReducer  = (user = initialState, action) => {
   switch (action.type) {
     case types.SET_USER: {
       return {
@@ -16,3 +16,5 @@ export default (user = initialState, action) => {
       return user;
   }
 };
+
+export default UserReducer;
