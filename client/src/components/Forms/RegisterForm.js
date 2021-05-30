@@ -1,12 +1,12 @@
  import React from 'react'
-import {Box, FormControl, FormLabel, Input, Button, FormErrorMessage, Alert} from '@chakra-ui/react'
+import {Box, FormControl, FormLabel, Input, Button, FormErrorMessage, Alert, toast} from '@chakra-ui/react'
 import {Formik, Field, Form} from 'formik'
+import {useRegister} from 'hooks/queries/user'
 import * as Yup from 'yup'
-import {useHistory} from "react-router-dom"
 
 function RegisterForm() { 
 
-    const history = useHistory();
+    const registerFn = useRegister()
 
     function equalTo(ref, msg) {
         return Yup.mixed().test({
@@ -39,8 +39,22 @@ function RegisterForm() {
         })}
         onSubmit={(values, actions) => {
           setTimeout(() => {
-            history.push("/user/github")
-            actions.setSubmitting(false)
+            registerFn.mutate(values, {
+                onSucces: (res) => {
+                    console.log(res)
+                    actions.setSubmitting(false)
+                },
+                onError: (err) => {
+                    console.log(err)
+                    actions.setSubmitting(false)
+                    toast({
+                        title: "User exists",
+                        status: "error",
+                        isClosable: true,
+                        duration: 5000,
+                      })
+                }
+            })
           }, 1000)
         }}
       >
