@@ -1,41 +1,45 @@
 import React from 'react'
 import {Box, FormControl, Input, Button, FormErrorMessage, useToast, Alert} from '@chakra-ui/react'
 import {Formik, Field, Form} from 'formik'
-import {verifyLogin} from 'api/githubuser'
+import {useLogin} from 'hooks/queries/user'
 import { useHistory } from 'react-router';
 import * as Yup from 'yup'
 
 function LoginForms() {
 
+    const loginFn = useLogin();
     const toast = useToast();
     const history = useHistory();
 
     return (
         <Formik
         initialValues={{
-             user: "",
+             username: "",
              password: ""
             }}
         validationSchema={Yup.object({
-            user: Yup.string().required('Required'),
+            username: Yup.string().required('Required'),
             password: Yup.string().min(8, 'Must have minimum 8 characters').required('Required')
         })}   
 
         onSubmit={(values, actions) => {
           setTimeout(() => {
-            verifyLogin(values.user)
-                .then(res => {
-                    history.push("/user/"+ values.user)
-                })
-                .catch(err => {
+            loginFn.mutate(values, {
+                onSucces: (res) => {
+                    console.log(res)
+                    actions.setSubmitting(false)
+                },
+                onError: (err) => {
+                    console.log(err)
+                    actions.setSubmitting(false)
                     toast({
-                      title: "User not found",
-                      status: "error",
-                      isClosable: true,
-                      duration: 5000,
-                    })
-                })
-            actions.setSubmitting(false)
+                        title: "User not found",
+                        status: "error",
+                        isClosable: true,
+                        duration: 5000,
+                      })
+                }
+            })
           }, 1000)
         }}
       >
@@ -43,16 +47,19 @@ function LoginForms() {
           <Form>
               <Box p="20px">
                 <Box py="10px">
-                        <Field name="user">
+                        <Field name="username">
                         {({ field, form }) => (
                             <FormControl>
-                            <Input {...field} id="user" placeholder="user or email" />
+                            <Input {...field} id="username" placeholder="user or email" />
                             <FormErrorMessage>{form.errors.login}</FormErrorMessage>
                             </FormControl>
                         )}
                         </Field>
-                        
-                        
+                        { props.touched.username && props.errors.username ? (
+                            <Alert status="error">
+                                {props.errors.username}
+                            </Alert>
+                        ): null}
                 </Box>
                 <Box py="10px">
                     <Field name="password">
