@@ -3,7 +3,7 @@ import axios from 'axios'
  export function login(params) {
     return axios({
         method: "post",
-        url: `/api/user/login`,
+        url: `http://localhost:5000/api/user/login`,
         headers: {
            username: params.username,
            password: params.password
@@ -20,7 +20,7 @@ import axios from 'axios'
 export function register(params) {
     return axios({
         method: "post",
-        url: `/api/usere/signin`,
+        url: `http://localhost:5000/api/user/signin`,
         headers: {
             username: params.username,
             first_name: params.firstName,
