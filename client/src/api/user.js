@@ -4,8 +4,8 @@ import axios from 'axios'
     return axios({
         method: "post",
         url: `http://localhost:5000/api/user/login`,
-        headers: {
-           username: params.username,
+        data: {
+            username: params.username,
            password: params.password
         }
     })
@@ -21,7 +21,7 @@ export function register(params) {
     return axios({
         method: "post",
         url: `http://localhost:5000/api/user/signin`,
-        headers: {
+        data: {
             username: params.username,
             first_name: params.firstName,
             last_name: params.lastName,
