@@ -1,5 +1,5 @@
 import React from 'react'
-import {Grid, Box, Text, Flex, Image} from '@chakra-ui/react'
+import {Grid, Box, Text, Flex, Image, Link} from '@chakra-ui/react'
 import SearchGithubUser from 'components/SearchGithubUser'
 
 function AboutPage() {
@@ -19,6 +19,15 @@ function AboutPage() {
 
                             <Text fontWeight="semibold" fontSize="medium">
                                 Frontend Developer
+                                <Flex>
+                                    <Link width="8%"href="https://github.com/Sstark97" marginRight="2rem" isExternal>
+                                        <Image mx='1rem' width="100%" src={require("assets/images/github-icon.svg")?.default} />
+                                    </Link>
+                                    <Link width="8%"href="https://www.linkedin.com/in/aitorscinfo/" isExternal>
+                                        <Image mx='1rem' width="100%" src={require("assets/images/linkedin-brands.svg")?.default} />
+                                    </Link>
+                                
+                                </Flex>
                             </Text>
 
                             <Text>
@@ -36,11 +45,20 @@ function AboutPage() {
                         <Flex flexDirection="column" minWidth="600px">
 
                             <Text fontWeight="extrabold" fontSize="2xl">
-                                Lucía González Lara
+                                Jhon Vincent
                             </Text>
 
                             <Text fontWeight="semibold" fontSize="medium">
                                 Frontend Developer
+                                <Flex>
+                                    <Link width="8%"href="https://github.com/jvincent3" marginRight="2rem" isExternal>
+                                        <Image mx='1rem' width="100%" src={require("assets/images/github-icon.svg")?.default} />
+                                    </Link>
+                                    <Link width="8%"href="https://www.linkedin.com/in/vincent-john/" isExternal>
+                                        <Image mx='1rem' width="100%" src={require("assets/images/linkedin-brands.svg")?.default} />
+                                    </Link>
+                                
+                                </Flex>
                             </Text>
 
                             <Text>
@@ -67,6 +85,15 @@ function AboutPage() {
 
                             <Text fontWeight="semibold" fontSize="medium">
                                 Backend Developer
+                                <Flex>
+                                    <Link width="8%"href="https://github.com/l0g0l" marginRight="2rem" isExternal>
+                                        <Image mx='1rem' width="100%" src={require("assets/images/github-icon.svg")?.default} />
+                                    </Link>
+                                    <Link width="8%"href="https://www.linkedin.com/in/luciagonzalezlara/" isExternal>
+                                        <Image mx='1rem' width="100%" src={require("assets/images/linkedin-brands.svg")?.default} />
+                                    </Link>
+                                
+                                </Flex>
                             </Text>
 
                             <Text>
@@ -90,12 +117,21 @@ function AboutPage() {
 
                             <Text fontWeight="semibold" fontSize="medium">
                                 Backend Developer
+                                <Flex>
+                                    <Link width="8%"href="https://github.com/E-Drop" marginRight="2rem" isExternal>
+                                        <Image mx='1rem' width="100%" src={require("assets/images/github-icon.svg")?.default} />
+                                    </Link>
+                                    <Link width="8%"href="https://www.linkedin.com/in/edgar-rosendo-9452a9146/" isExternal>
+                                        <Image mx='1rem' width="100%" src={require("assets/images/linkedin-brands.svg")?.default} />
+                                    </Link>
+                                
+                                </Flex>
                             </Text>
 
                             <Text>
                                 Front-end developer professional, 5 years of experience in development,<br></br>
-                                using the latest standards and tools, html5, css3, es6, react, react native<br></br>
-                                , redux, typescript, express, node, npm, php, mysql, bootstrap, SASS, github.<br></br> 
+                                using the latest standards and tools, html5, css3, es6, react, react native,<br></br>
+                                redux, typescript, express, node, npm, php, mysql, bootstrap, SASS, github.<br></br> 
                                 Development of REST Api's using express js node and mongo.
                             </Text>
 
