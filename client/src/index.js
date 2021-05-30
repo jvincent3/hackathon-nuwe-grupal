@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import {ChakraProvider} from '@chakra-ui/react'
 import {QueryClient, QueryClientProvider} from 'react-query'
 import theme from "theme"
+import store from './redux/store'
+import { Provider } from 'react-redux'
 
 const twentyFourHoursInMs = 1000 * 60 * 60* 24
 const queryClient = new QueryClient({
@@ -18,11 +20,13 @@ const queryClient = new QueryClient({
 
 ReactDOM.render(
   <React.StrictMode>
+    <Provider store={store}>
       <ChakraProvider theme={theme}>
           <QueryClientProvider client={queryClient}>
             <App />
           </QueryClientProvider>
       </ChakraProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
