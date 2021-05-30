@@ -18,7 +18,7 @@ exports.loginUser = async (req, res) => {
      
         if (user.length === 0) {
             return res.status(400).json({
-                error: errorHandler(err),
+                error: (err),
             });
         }
         console.log(decrypt(user[0].password), password)

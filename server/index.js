@@ -33,7 +33,7 @@ app.use('/api/repository', require('./routes/repository.js'));
 // Ruta para obtener la respuesta de la primera parte
 app.use('/api/github', require('./routes/secondPass.js'));
 
-// // Rutas para el crud de equipos
+// Rutas para el crud de equipos
 app.use('/api/team', require('./routes/team.js'));
 
 

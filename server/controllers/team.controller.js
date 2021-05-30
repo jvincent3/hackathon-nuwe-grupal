@@ -2,7 +2,7 @@ require('dotenv').config();
 // const { decrypt } = require('../helpers/crypto');
 const jwt = require('jsonwebtoken');
 const Team = require('../models/team.model');
-const Repository = require('../models/repository.model');
+// const Repository = require('../models/repository.model');
 const { errorHandler } = require('../helpers/dbErrorHandler');
 
 
@@ -55,7 +55,7 @@ exports.getAllTeam = async (req, res) => {
  * @param {Object} res 
  */
 exports.updateTeam = async (req, res) => {
-    console.log(req)
+  
     // Encuentra el equipo con el ID proporcionado y lo actualiza
     await Team.findOneAndUpdate(
         { _id: req.params.teamname },
@@ -88,9 +88,9 @@ exports.deleteTeam = async (req, res) => {
                 error: "No se ha podido eliminar al equipo",
             });
         };
-              
-            // devuelve el equipo que ha sido eliminado
-            res.json({ message: `${team} equipos han sido eliminados`});
+
+        // devuelve el equipo que ha sido eliminado
+        res.json({ message: `${team} equipos han sido eliminados` });
 
     });
 
@@ -101,29 +101,10 @@ exports.deleteTeam = async (req, res) => {
  * @param {Object} req 
  * @param {Object} res 
  */
- exports.createMember = async (req, res) => {
-    console.log(req.params)
-let teamsearch
-    await Team.find({_id:req.params.teamid}).exec((err, team) => {
-     
-        if (err || !team) {
-            return res.status(400).json({
-              error: 'equipo no encontrado',
-            });
-        }
+exports.createMember = async (req, res) => {
+    console.log(req.body)
 
-         teamsearch = team;
-    })
-console.log(teamsearch)
-    await teamsearch.save((err, team) => {
-        if (err) {
-            return res.status(400).json({
-                error: errorHandler(err),
-            });
-        }
-
-        res.status(200).json({ message: 'Miembro creado correctamente' });
-    });
+   
 };
 
 /**
@@ -131,7 +112,7 @@ console.log(teamsearch)
  * @param {Object} req 
  * @param {Object} res 
  */
- exports.deleteMember = async (req, res) => {
+exports.deleteMember = async (req, res) => {
 
     let team = new Team(req.body);
 
