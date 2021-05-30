@@ -1,16 +1,19 @@
 import React from 'react'
+import {useDispatch} from 'react-redux'
 import {useHistory} from 'react-router-dom'
 import {Form, Field, Formik} from 'formik'
 import {FormControl,  Input, FormErrorMessage, Button} from '@chakra-ui/react'
+import { setUser } from 'redux/actions/UserActions';
 
 function Login() {
-
+    const dispatch = useDispatch();
     const history = useHistory();
 
     return (
         <Formik
         initialValues={{ name: "" }}
         onSubmit={(values, actions) => {
+            dispatch(setUser({name: values.name}))
             setTimeout(() => {
             actions.setSubmitting(false)
                 history.push("/user/"+values.name)
