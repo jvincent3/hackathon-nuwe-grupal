@@ -1,4 +1,4 @@
-import React from 'react'
+ import React from 'react'
 import {Box, FormControl, FormLabel, Input, Button, FormErrorMessage, Alert} from '@chakra-ui/react'
 import {Formik, Field, Form} from 'formik'
 import * as Yup from 'yup'
@@ -7,6 +7,22 @@ import {useHistory} from "react-router-dom"
 function RegisterForm() { 
 
     const history = useHistory();
+
+    function equalTo(ref, msg) {
+        return Yup.mixed().test({
+            name: 'equalTo',
+            exclusive: false,
+            message: msg || '${path} must be the same as ${reference}',
+            params: {
+                reference: ref.path
+            },
+            test: function(value) {
+                return value === this.resolve(ref);
+            }
+        })
+    }
+
+    Yup.addMethod(Yup.string, 'equalTo', equalTo)
 
     return (
         <Formik
@@ -18,7 +34,8 @@ function RegisterForm() {
         validationSchema={Yup.object({
             user: Yup.string().required('Required'),
             email: Yup.string().email('Invalid email adress').required('Required'),
-            password: Yup.string().required('Required')
+            password: Yup.string().min(8, 'Must have minimum 8 characters').required('Required'),
+            passwordConfirm: Yup.string().min(8, 'Must have minimum 8 characters').equalTo(Yup.ref('password'), 'Password must match').required('Required')
         })}
         onSubmit={(values, actions) => {
           setTimeout(() => {
@@ -75,6 +92,22 @@ function RegisterForm() {
                     { props.touched.password && props.errors.password ? (
                             <Alert status="error">
                                 {props.errors.password}
+                            </Alert>
+                        ): null}
+                </Box>
+                <Box py="10px">
+                    <Field name="passwordConfirm">
+                    {({ field, form }) => (
+                        <FormControl>
+                            <FormLabel htmlFor="passwordConfirm">Confirm password</FormLabel>
+                            <Input type="password" {...field} id="passwordConfirm"/>
+                            <FormErrorMessage>{form.errors.passwordConfirm}</FormErrorMessage>
+                        </FormControl>
+                    )}
+                    </Field>
+                    { props.touched.passwordConfirm && props.errors.passwordConfirm ? (
+                            <Alert status="error">
+                                {props.errors.passwordConfirm}
                             </Alert>
                         ): null}
                 </Box>
