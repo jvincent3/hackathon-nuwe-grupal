@@ -4,7 +4,6 @@ const router = express.Router();
 const {
     loginUser,
     signinUser,
-    createUser,
     getOneUser,
     getAllUsers,
     updateUser,
@@ -19,9 +18,6 @@ router.post('/login', encrypt, loginUser);
 
 // Ruta para sign in
 router.post('/signin', encrypt, signinUser);
-
-// Ruta para crear un usuario
-router.post('/', encrypt, createUser);
 
 // Ruta para obtener todos los usuarios
 router.get('/', authToken, getAllUsers);

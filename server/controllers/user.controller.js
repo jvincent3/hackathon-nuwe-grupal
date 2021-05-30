@@ -14,10 +14,17 @@ const { errorHandler } = require('../helpers/dbErrorHandler');
 exports.loginUser = async (req, res) => {
 
     const { username, password } = req.body;
-    await User.find({ "username": username }, async(err, user) => {
-       console.log(decrypt(user[0].password), password)
+    await User.find({ "username": username }, async (err, user) => {
+     
+        if (user.length === 0) {
+            return res.status(400).json({
+                error: errorHandler(err),
+            });
+        }
+        console.log(decrypt(user[0].password), password)
 
-        if (decrypt(user[0].password) === decrypt(password)){
+
+        if (decrypt(user[0].password) === decrypt(password)) {
             //generate a signed token with user id and secret
             const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
 
@@ -25,7 +32,7 @@ exports.loginUser = async (req, res) => {
             res.cookie("github_token", token, { expire: new Date() + 9999 });
 
             res.json({ token, user });
-        }else {
+        } else {
             return res.status(401).json({
                 error: 'Nombre de Usuario o Contraseña incorrecto',
             });
@@ -39,45 +46,16 @@ exports.loginUser = async (req, res) => {
     });
 }
 
+
 /**
  * Recibe información de un usuario y lo registra en la base de datos
  * @param {Object} req 
  * @param {Object} res 
  */
-
 exports.signinUser = async (req, res) => {
 
     let user = new User(req.body);
-    const { username, password } = user;
-    console.log(password)
-    await User.findOne({ "username": userName }, function (e, user) {
 
-
-        if (err) {
-            return res.status(400).json({
-                error: errorHandler(err),
-            });
-        }
-
-        //generate a signed token with user id and secret
-        const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
-
-        // persist the token as 't' in cookie with expiry date
-        res.cookie("github_token", token, { expire: new Date() + 9999 });
-
-        res.json({ token, user });
-    });
-}
-
-/**
- * Recibe información de un usuario y lo registra en la base de datos
- * @param {Object} req 
- * @param {Object} res 
- */
-exports.createUser = async (req, res) => {
-
-    let user = new User(req.body);
-console.log(user)
     await user.save((err, user) => {
         if (err) {
             return res.status(400).json({
@@ -203,4 +181,4 @@ exports.deleteUser = async (req, res) => {
 
     })
 
-}
+};
