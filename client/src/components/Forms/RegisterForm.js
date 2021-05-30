@@ -68,18 +68,18 @@ function RegisterForm() {
           <Form>
               <Box p="20px">
                 <Box py="10px">
-                        <Field name="user">
+                        <Field name="username">
                         {({ field, form }) => (
                             <FormControl>
-                                <FormLabel htmlFor="name">Username</FormLabel>
+                                <FormLabel htmlFor="name">username</FormLabel>
                                 <Input {...field} id="name"/>
-                                <FormErrorMessage>{form.errors.user}</FormErrorMessage>
+                                <FormErrorMessage>{form.errors.username}</FormErrorMessage>
                             </FormControl>
                         )}
                         </Field>
-                        { props.touched.user && props.errors.user ? (
+                        { props.touched.username && props.errors.username ? (
                             <Alert status="error">
-                                {props.errors.user}
+                                {props.errors.username}
                             </Alert>
                         ): null}
                 </Box>
