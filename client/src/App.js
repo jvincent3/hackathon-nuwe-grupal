@@ -8,6 +8,7 @@ import Login from "pages/login"
 import Register from "pages/register"
 import Layout from 'layout'
 import PageNotFound from 'components/Error/PageNotFound';
+import Landing from 'pages/landing'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
                 <Route path="/user/:username" component={User}/>
                 <Route path="/login" component={Login}/>
                 <Route path="/Register" component={Register}/>
+                <Route path="/landing" component={Landing} />
                 <Route component={PageNotFound}/>
             </Switch>
         </Layout>
