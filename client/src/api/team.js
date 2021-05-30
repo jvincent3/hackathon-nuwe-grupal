@@ -5,8 +5,9 @@ import axios from 'axios'
         method: "post",
         url: `http://localhost:5000/api/team/teamname`,
         data: {
-            username: params.username,
-            password: params.password
+            name: params.name,
+            members : params.members,
+            description: params.description
         }
     })
     .then(res => {
