@@ -1,23 +1,16 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-import {Flex, Box, Text} from '@chakra-ui/react' 
-
+import {useMediaQuery} from '@chakra-ui/react'
+import MobileNavbar from './MobileNavbar'
+import DesktopNavbar from './DesktopNavbar'
 
 function Navbar() {
+
+    const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)")
+
     return (
-        <Flex minHeight="80px" p="20px" justifyContent="space-between" boxShadow="0px 0px 1px 0px #ffffff">
-            <Box>
-                <Text fontWeight="semibold" fontSize="2xl"><Link to="/">Home</Link></Text>
-            </Box>
-            <Flex>
-                <Box px="10px">
-                    <Text fontWeight="semibold" fontSize="2xl"><Link to="/login">Login</Link></Text>
-                </Box>
-                <Box px="10px">
-                    <Text fontWeight="semibold" fontSize="2xl"><Link to="/register">Register</Link></Text>
-                </Box>
-            </Flex>
-        </Flex>
+        <>
+        {isLargerThan1000 ? <DesktopNavbar/>: <MobileNavbar/>}
+        </>
     )
 }
 
